@@ -2,23 +2,21 @@ package main
 
 import "fmt"
 
-func Hamming(dna1, dna2 string) []string {
-
-	var result []string
-	if len(dna1) == 0 && len(dna1) == 0 {
-		return result
+func Distance(a, b string) (int, error) {
+	if len(a) != len(b) {
+		return -1, fmt.Errorf("not same length")
 	}
-
-	for index, value := range dna1 {
-		if string(value) != string(dna2[index]) {
-			result = append(result, string(dna2[index]))
+	var result int
+	for index, value := range a {
+		if string(value) != string(b[index]) {
+			result++
 		}
 	}
-	return result
+	return result, nil
 }
 
 func main() {
 
-	fmt.Println(Hamming("GAGCCTACTAACGGGAT", "CATCGTAATGACGGCCT"))
+	fmt.Println(Distance("GAGCCTACTAACGGGAT", "CATCGTAATGACGGCCT"))
 
 }

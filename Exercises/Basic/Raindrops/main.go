@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"strconv"
 	"strings"
 )
 
@@ -19,7 +20,7 @@ func Raindrops(count int) string {
 	}
 
 	if result.Len() == 0 {
-		return fmt.Sprintf("%d", count) // اگر هیچ کدام از شرایط برقرار نبود، عدد را برگردانید
+		return strconv.Itoa(count) // اگر هیچ کدام از شرایط برقرار نبود، عدد را برگردانید
 	}
 
 	return result.String() // نتیجه نهایی را برگردانید
