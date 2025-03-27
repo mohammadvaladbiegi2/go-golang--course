@@ -11,3 +11,7 @@ func TestSquere(t *testing.T) {
 		}
 	}
 }
+
+// how run
+// cd to folder then
+// go test
